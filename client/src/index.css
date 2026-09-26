@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbf6ec;
+}
+
+/* Hand-drawn style divider instead of a plain hairline rule */
+.leaf-divider {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8fa07c, transparent);
+  border: none;
+}
+
+.leaf-divider::after {
+  content: "🌻";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  background: #fbf6ec;
+  padding: 0 10px;
+}
+
+/* Visible keyboard focus, kept consistent across interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #3f4b33;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
